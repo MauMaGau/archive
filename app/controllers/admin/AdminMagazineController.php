@@ -1,19 +1,19 @@
 <?php
 
-class AdminMagazine extends BaseController
+class AdminMagazineController extends BaseController
 {
 
     public function index()
     {
         $magazines = Magazine::get();
 
-        return View::make('magazine.index', compact('magazines'));
+        return View::make('admin.magazine.index', compact('magazines'));
     }
 
     public function create()
     {
         $magazine = new magazine;
-        return View::make('magazine.create', compact('magazine'));
+        return View::make('admin.magazine.create', compact('magazine'));
     }
 
     public function store()
@@ -28,9 +28,9 @@ class AdminMagazine extends BaseController
 
     public function edit($magazineId)
     {
-        $magazine = Magazine::findOrFail($magazineId);
+        $magazine = Magazine::with('pages')->findOrFail($magazineId);
 
-        return View::make('magazine.edit', compact('magazine'));
+        return View::make('admin.magazine.edit', compact('magazine'));
     }
 
     public function update($magazineId)

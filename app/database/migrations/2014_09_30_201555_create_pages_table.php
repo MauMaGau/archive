@@ -15,6 +15,8 @@ class CreatePagesTable extends Migration {
 		Schema::create('pages', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->integer('magazine_id')->unsigned();
+            $table->foreign('magazine_id')->references('id')->on('magazines');
             $table->integer('number');
             $table->text('body');
             $table->softDeletes();

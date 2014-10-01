@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     {{ Form::model($magazine, ['route'=>['admin.magazine.update', $magazine->id], 'method'=>'post', 'class'=>'form-horizontal']) }}
         <div class="form-group">
             <legend>Edit magazine</legend>
@@ -22,4 +23,8 @@
         </div>
     {{ Form::close() }}
 
+    {{ link_to_route('admin.page.create', 'Add Page', $magazine->id) }}
+    <ul>
+        @each('admin.magazine.item-page', $magazine->pages, 'page')
+    </ul>
 @stop

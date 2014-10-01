@@ -1,7 +1,9 @@
 <?php
 
-class Pages extends Eloquent
+class Page extends Eloquent
 {
+
+    protected $guarded = ['id'];
 
     public function magazine()
     {

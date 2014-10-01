@@ -3,7 +3,7 @@
 @section('content')
 
     <ul>
-        @each('magazine.item', $magazines, 'magazine')
+        @each('admin.magazine.item', $magazines, 'magazine')
     </ul>
 
 @stop
