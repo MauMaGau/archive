@@ -3,7 +3,7 @@
 @section('content')
 
 
-    {{ Form::model($page, ['route'=>['admin.page.update', $page->id], 'method'=>'post', 'class'=>'form-horizontal']) }}
+    {{ Form::model($page, ['route'=>['admin.page.update', $page->id], 'method'=>'post', 'files'=>true, 'class'=>'form-horizontal']) }}
         <div class="form-group">
             <legend>Edit page</legend>
         </div>
@@ -13,6 +13,14 @@
             <div class="col-sm-10">
                 {{ Form::text('number') }}
                 {{ $errors->first('number', '<p class="text-danger">:message</p>') }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('pdf', 'PDF:', ['class'=>'col-sm-2 control-label']) }}
+            <div class="col-sm-10">
+                {{ Form::file('pdf') }}
+                {{ $errors->first('pdf', '<p class="text-danger">:message</p>') }}
             </div>
         </div>
 

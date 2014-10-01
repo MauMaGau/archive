@@ -34,6 +34,10 @@ class AdminPageController extends BaseController
     {
         $page = Page::with('magazine')->findOrFail($pageId);
 
+        if(Input::hasFile('pdf')){
+            $file = Input::file('pdf')->move(base_path('public/magazines/'.$page->magazine_id), $pageId.'.pdf');
+        }
+
         $page->number = Input::get('number');
         $page->body = Input::get('body');
         $page->save();
