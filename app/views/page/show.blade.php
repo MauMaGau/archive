@@ -18,7 +18,7 @@
         <section id="text" style="height:80%; width:48%; float:right; background-color:#fff">
             <p class="expand">
                 Expand
-            </p>{{ $page->body }}</iframe>
+            </p>{{ nl2br($page->body) }}</iframe>
         </section>
 
         <section id="page-nav" class="col-md-8 col-md-offset-2 text-center" style="clear:both; margin-top:40px;">
