@@ -28,7 +28,7 @@ Route::get('magazine/show/{magazineId}', [
 
 Route::get('page/show/{pageId}', [
     'as' => 'page.show',
-    'uses' => 'pageController@show'
+    'uses' => 'PageController@show'
 ]);
 
 Route::get('admin/magazine', [
