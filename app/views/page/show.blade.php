@@ -20,7 +20,9 @@
             <p class="expand">
                 Expand
             </p>
-            <p>{{ nl2br($page->body) }}</p>
+            <div style="width:100%; height:100%; overflow:scroll">
+                <p>{{ nl2br($page->body) }}</p>
+            </div>
         </section>
 
         <section id="page-nav" class="col-md-8 col-md-offset-2 text-center" style="clear:both; margin-top:40px;">
