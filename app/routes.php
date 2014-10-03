@@ -18,12 +18,12 @@ Route::get('/', function()
 
 Route::get('magazine', [
     'as' => 'magazine',
-    'uses' => 'magazineController@index'
+    'uses' => 'MagazineController@index'
 ]);
 
 Route::get('magazine/show/{magazineId}', [
     'as' => 'magazine.show',
-    'uses' => 'magazineController@show'
+    'uses' => 'MagazineController@show'
 ]);
 
 Route::get('page/show/{pageId}', [
