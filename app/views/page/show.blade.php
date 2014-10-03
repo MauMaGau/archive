@@ -22,7 +22,13 @@
         </section>
 
         <section id="page-nav" class="col-md-8 col-md-offset-2 text-center" style="clear:both; margin-top:40px;">
-            <a href="" class="btn btn-primary pull-left" title="previous page">previous page</a> <a href="book.php" class="btn btn-primary" title="Back to book"> Back to book</a> <a href="" class="btn btn-primary pull-right" title="next page"> next page</a>
+            @if($page->prev)
+                <a href="{{ route('page.show', $page->prev->id) }}" class="btn btn-primary pull-left" title="previous page">previous page</a>
+            @endif
+            <a href="{{ route('magazine.show', $page->magazine->id) }}" class="btn btn-primary" title="Back to book"> Back to {{ $page->magazine->title }}</a>
+            @if($page->next)
+                <a href="{{ route('page.show', $page->next->id) }}" class="btn btn-primary pull-right" title="next page"> next page</a>
+            @endif
         </section>
     </div>
 
