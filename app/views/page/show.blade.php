@@ -12,13 +12,15 @@
         <section id="pdf" style="height:80%; width:48%; float:left; background-color:#fff">
             <p class="expand">
                 Expand
-            </p><iframe src="/magazines/{{ $page->magazine->id }}/{{ $page->id }}.pdf" style="width:100%; height:100%"></iframe>
+            </p>
+            <iframe src="/magazines/{{ $page->magazine->id }}/{{ $page->id }}.pdf" style="width:100%; height:100%"></iframe>
         </section>
 
         <section id="text" style="height:80%; width:48%; float:right; background-color:#fff">
             <p class="expand">
                 Expand
-            </p>{{ nl2br($page->body) }}</iframe>
+            </p>
+            <p>{{ nl2br($page->body) }}</p>
         </section>
 
         <section id="page-nav" class="col-md-8 col-md-offset-2 text-center" style="clear:both; margin-top:40px;">
